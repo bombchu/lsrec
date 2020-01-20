@@ -1,0 +1,11 @@
+#!/bin/bash
+
+var=$1
+datevao="$(date +%Y-%m-%d)"
+
+printf "\n\n\nAccess times:\n\n" >> /home/andy/ls_record_$datevao.txt
+ls -ltu $var >> /home/andy/ls_record_$datevao.txt
+printf "\n\n\nMod times:\n\n" >> /home/andy/ls_record_$datevao.txt
+ls -lt $var >> /home/andy/ls_record_$datevao.txt
+ls -1 $var >/dev/tty
+cd $var
